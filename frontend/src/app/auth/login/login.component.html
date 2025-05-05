@@ -1,0 +1,58 @@
+<div class="login-page-wrapper">
+  <!-- 🧩 Colonne de gauche -->
+  <div class="login-left">
+    <!-- ✅ Alerte de connexion -->
+    <div *ngIf="connectedMessage" class="alert-success-login">
+      {{ connectedMessage }}
+      <button class="button-form-logout-login" (click)="logout()">Déconnexion</button>
+    </div>
+
+    <!-- ✅ Titre -->
+     <div class="login-content">
+    <h1 class="title-login">Connexion</h1>
+
+    <!-- ✅ Formulaire (caché si connecté) -->
+    <form
+      class="form-group-container-login"
+      *ngIf="!isLoggedIn()"
+      (ngSubmit)="onSubmit()"
+      #loginForm="ngForm"
+    >
+      <div class="form-group-login-email">
+        <label for="email-login">Email</label>
+        <input
+          type="email"
+          id="email-login"
+          name="email"
+          required
+          [(ngModel)]="credentials.email"
+          autocomplete="username"
+        />
+      </div>
+
+      <div class="form-group-login-password">
+        <label for="password-login">Mot de passe</label>
+        <input
+          type="password"
+          id="password-login"
+          name="password"
+          required
+          [(ngModel)]="credentials.password"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <p class="link-register-login">
+        Je n’ai pas de compte. <a href="#">Je m’inscris !</a>
+      </p>
+
+      <button class="button-form-login" type="submit">Connexion</button>
+    </form>
+     </div>
+  </div>
+
+  <!-- 🎯 Colonne de droite avec image -->
+  <div class="login-right">
+    <img src="http://localhost:8000/images/form-login/logo-linktracker.webp" alt="..." />
+  </div>
+</div>

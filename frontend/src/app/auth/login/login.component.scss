@@ -1,0 +1,67 @@
+/* ✅ Layout global */
+.login-page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+.form-group-container-login {
+  width: 100%;
+  max-width: 350px;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ✅ Colonne gauche (formulaire) */
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* ✅ centrer horizontalement */
+  padding: 3rem;
+  background-color: #fff;
+}
+
+/* ✅ Colonne droite (illustration) */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d1f33;
+}
+
+.login-right img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* ✅ Titre centré dans la colonne */
+.title-login {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* ✅ Responsive mobile */
+@media screen and (max-width: 768px) {
+  .login-page-wrapper {
+    flex-direction: column;
+  }
+
+  .login-right {
+    display: none;
+  }
+
+  .login-left {
+    padding: 2rem 1.5rem;
+  }
+}
